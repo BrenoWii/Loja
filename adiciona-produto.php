@@ -1,0 +1,18 @@
+<?php include ("cabecalho.php") ?>
+<?php include("banco-produto.php") ?>
+<?php include ("conecta.php") ?>
+<?php
+$nome = $_POST['nome'];
+$preco = $_POST['preco'];
+$descricao = $_POST['descricao'];
+
+if(insereProduto($conexao, $nome, $preco, $descricao)){?>
+  <p class="text-success">produto <?= $nome; ?>, <?= $preco; ?> adicionado com sucesso!</p>
+<?php } else {
+  $msg = mysqli_error($conexao);
+?>
+  <p class="text-danger">O produto <?= $nome ?>,nao foi adicionado:<?= $msg ?></p>
+<?php
+}
+?>
+<?php include("rodape.php"); ?>

@@ -24,7 +24,7 @@ $categorias= listacategorias($conexao)
       <td><input type="checkbox" name="usado" value="true">Usado</td>
     </tr>
     <tr>
-      <td>Categirias</td>
+      <td>Categorias</td>
       <td>
         <select name="categoria_id" class="form-control">
           <?php  foreach ($categorias as $categoria):?>

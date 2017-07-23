@@ -23,3 +23,7 @@ function buscaProduto($conexao,$id){
   return mysqli_fetch_assoc($resultado);
 
 }
+function alteraproduto($conexao, $id, $nome, $preco, $descricao, $categoria_id, $usado) {
+  $query="update produtos set nome ='{$nome}', preco ={$preco} ,descricao = '{$descricao}', categoria_id= {$categoria_id}, Usado ={$usado} where id ='{$id}'";
+  return mysqli_query($conexao,$query);
+}

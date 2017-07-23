@@ -6,12 +6,13 @@ include ("banco-produto.php");
 $id =$_GET['id'];
 $produto = buscaProduto($conexao,$id);
 $categorias = listacategorias($conexao);
-$usado = $produto['usado'] ? "checked='checked'": "";
+$usado = $produto['Usado'] ? "checked='checked'": "";
 ?>
 
 
 <h1>Alteração de produto</h1>
-<form action="alterar-produto.php" method="post">
+<form action="altera-produto.php" method="post">
+  <input type="hidden" name="id" value="<?=$produto['id']?>">
   <table class="table">
     <tr>
       <td>Nome:</td>
@@ -33,8 +34,11 @@ $usado = $produto['usado'] ? "checked='checked'": "";
       <td>Categirias</td>
       <td>
         <select name="categoria_id" class="form-control">
-          <?php  foreach ($categorias as $categoria):?>
-            <option value="<?=$categoria['id']?>"><?=$categoria['nome']?></option>
+          <?php  foreach ($categorias as $categoria):
+            $eacategoria= $produto['categoria_id'] == $categoria['id'];
+            $selecao = $eacategoria ? "selected='selected'" : "";
+            ?>
+            <option value="<?=$categoria['id']?>" <?=$selecao?>><?=$categoria['nome']?></option>
           <?php endforeach ?>
 
         </select>

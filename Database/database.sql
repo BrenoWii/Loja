@@ -3,6 +3,8 @@ use loja;
 create table produtos(id integer primary key auto_increment,nome varchar(255),preco decimal(10,2),descricao text,categoria_id integer,Usado boolean);
 create table categorias(id integer primary key auto_increment,nome varchar(255));
 insert into categorias (nome) values ("esportes"), ("mobilidade"),("escolar");
+create table usuarios (id integer primary key auto_increment, email varchar(255), senha varchar(255));
+insert into usuarios (email, senha) values (email= "brenoo194@gmail.com", senha ="e10adc3949ba59abbe56e057f20f883e");
 
 
  

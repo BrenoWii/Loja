@@ -1,23 +1,24 @@
 <?php include ("cabecalho.php");
 include("logica-usuario.php");
+?>
 
-if(isset($_GET["login"]) && $_GET["login"]==true) {  ?>
-  <p class="alert-success">Logado com sucesso</p>
+<?php  if(isset($_SESSION["success"])) {  ?>
+    <p class="alert-success"><?= $_SESSION["success"]?></p>
 
+<?php } if(isset($_SESSION["danger"])) {  ?>
+  <p class="alert-danger"><?= $_SESSION["danger"]?></p>
 <?php
 }
-if(isset($_GET["login"]) && $_GET["login"]==false) {  ?>
-  <p class="alert-danger">Email ou senha invalida</p>
-<?php } ?>
-<?php if(isset($_GET["falhaDeSegurança"]) && $_GET["falhaDeSegurança"]==true) {  ?>
-  <p class="alert-danger">Voce nao tem acesso a essa funcionalidade</p>
-<?php } ?>
+  unset($_SESSION["danger"]);
+  unset($_SESSION["success"]);
+  ?>
 
 
 <h1>Bem vindo!!</h1>
 
 <?php if (usuarioestalogado())   {?>
   <p class="text-success">Voce esta logado como <?= usuarioLogado()?></p>
+  <p class="text-success"><a href="logout.php">Logout</a></p>
 <?php }else { ?>
 <h2>Login</h2>
 <form action="login.php" method="post">

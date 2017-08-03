@@ -4,14 +4,9 @@
 include ("logica-usuario.php");
 
 
-
-
 $produtos=listaProdutos($conexao);
-?>
-<?php  if(isset($_SESSION["success"])) {  ?>
-    <p class="alert-success"><?= $_SESSION["success"]?></p>
-<?php
-}
+
+
  ?>
 <table class="table table-striped table-bordered">
 <?php

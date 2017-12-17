@@ -2,8 +2,8 @@
 include ("conecta.php");
 include ('banco-categoria.php');
 include ("logica-usuario.php");
-
 verificaUsuario();
+    
 $categorias= listacategorias($conexao)
 ?>
 <h1>Formulario de produto</h1>
@@ -14,11 +14,15 @@ $categorias= listacategorias($conexao)
       <td ><input class="form-control" type="text" name="nome" ></td>
     </tr>
     <tr>
-      <td >PreÃ§o:</td>
+      <td >Preço:</td>
       <td><input class="form-control" type="number" name="preco"></td>
     </tr>
     <tr>
-      <td >DescriÃ§Ã£o:</td>
+      <td >Estoque:</td>
+      <td><input class="form-control" type="number" name="preco"></td>
+    </tr>
+    <tr>
+      <td >Descrição:</td>
       <td><textarea class="form-control" name="descricao"></textarea></td>
     </tr>
     <tr>
@@ -44,4 +48,5 @@ $categorias= listacategorias($conexao)
     </tr>
   </table>
 </form>
+
 <?php include("rodape.php") ?>

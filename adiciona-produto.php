@@ -2,11 +2,13 @@
 <?php include("banco-produto.php") ?>
 <?php include ("conecta.php");
 include ("logica-usuario.php");
-verificaUsuario();
+
 ?>
 <?php
+
 $nome = $_POST['nome'];
 $preco = $_POST['preco'];
+$estoque= $_POST['estoque'];
 $descricao = $_POST['descricao'];
 $categoria_id =$_POST['categoria_id'];
 if (array_key_exists('usado', $_POST )){
@@ -15,7 +17,7 @@ if (array_key_exists('usado', $_POST )){
   $usado = "false";
 }
 
-if(insereProduto($conexao, $nome, $preco, $descricao,$categoria_id,$usado)){?>
+if(insereProduto($conexao, $nome, $preco,$estoque, $descricao,$categoria_id,$usado)){?>
   <p class="text-success">O produto <?= $nome; ?>, <?= $preco; ?> adicionado com sucesso!</p>
 <?php } else {
   $msg = mysqli_error($conexao);
@@ -23,5 +25,6 @@ if(insereProduto($conexao, $nome, $preco, $descricao,$categoria_id,$usado)){?>
   <p class="text-danger">O produto <?= $nome ?>,nao foi adicionado:<?= $msg ?></p>
 <?php
 }
+
 ?>
 <?php include("rodape.php"); ?>

@@ -9,13 +9,23 @@ $produtos=listaProdutos($conexao);
 
  ?>
 <table class="table table-striped table-bordered">
+   <tr>
+       <td>Nome </td>
+    <td>Preço</td>
+    <td>Estoque</td>
+    <td>Descrição</td>
+    <td>Categoria</td>
+    
+  </tr>
 <?php
 foreach ($produtos as $produto) {
 ?>
-  <tr>
+   
+<tr>
     <td><?= $produto['nome']?> </td>
     <td>R$ <?= $produto ['preco']?> </td>
-    <td> <?= substr($produto ['descricao'], 0,40)?></td>
+    <td><?= $produto ['estoque']?> </td>
+    <td><?= substr($produto ['descricao'], 0,40)?></td>
     <td><?=$produto ['categoria_nome']?></td>
     <td><a class="btn btn-primary" href="produto-alt-form.php?id=<?=$produto['id']?>">Alterar</a></td>
     <td>
@@ -25,7 +35,7 @@ foreach ($produtos as $produto) {
 
       </form>
     </td>
-  </tr>
+</tr>
 <?php
 }
 ?>

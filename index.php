@@ -4,7 +4,7 @@ include("logica-usuario.php");
 
 <h1>Bem vindo!!</h1>
 
-<?php if (usuarioestalogado())   {?>
+<?php if (usuarioestalogado()){   ?>
   <p class="text-success">Voce esta logado como <?= usuarioLogado()?></p>
   <p class="text-success"><a href="logout.php">Logout</a></p>
 <?php }else { ?>
@@ -19,6 +19,7 @@ include("logica-usuario.php");
         <td>Senha</td>
         <td><input class="form-control" type="password" name="senha"></td>
       </tr>
+      
       <tr>
         <td><button class="btn btn-primary">Login</button></td>
       </tr>

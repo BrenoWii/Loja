@@ -1,7 +1,7 @@
 <?php
 
-function insereProduto($conexao, $nome, $preco,$descricao, $categoria_id,$usado){
-  $query="insert into produtos(nome, preco, descricao,categoria_id,usado ) values('{$nome}', {$preco},'{$descricao}', {$categoria_id},{$usado})";
+function insereProduto($conexao, $nome, $preco,$estoque,$descricao, $categoria_id,$usado){
+  $query="insert into produtos(nome, preco,estoque, descricao,categoria_id,usado ) values('{$nome}', {$preco},{$estoque},'{$descricao}', {$categoria_id},{$usado})";
   return mysqli_query($conexao,$query);
 }
 function listaProdutos ($conexao){
@@ -10,7 +10,9 @@ function listaProdutos ($conexao){
   while ($produto = mysqli_fetch_assoc($resultado)) {
     array_push($produtos, $produto);
   }
+  
   return $produtos;
+  
 }
 
 function removeProduto($conexao, $id){

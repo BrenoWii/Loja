@@ -5,10 +5,12 @@ include ("mostra-alerta.php");
  ?>
 <html>
   <head>
-    <meta charset="utf-8">
+    
     <title>Minha loja</title>
+    
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/loja.css">
+    <meta http-equiv="content-type" content="text/html;charset=utf-8" />
   </head>
   <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
@@ -19,7 +21,9 @@ include ("mostra-alerta.php");
         <div>
           <ul class="nav navbar-nav">
             <li><a href="produto-formulario.php">Adciona Produto</a></li>
+            <li><a href="usuario-form.php">Adciona Usuario</a></li>
             <li><a href="produto-lista.php">Lista produtos</a></li>
+            <li><a href="produto-lista.php">Comprar</a></li>
             <li><a href="sobre.php">Sobre</a></li>
 
           </ul>

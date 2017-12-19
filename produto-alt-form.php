@@ -22,6 +22,10 @@ $usado = $produto['Usado'] ? "checked='checked'": "";
       <td >Preço:</td>
       <td><input class="form-control" type="number" name="preco" value="<?=$produto['preco']?>"></td>
     </tr>
+      <tr>
+          <td >Estoque:</td>
+          <td><input class="form-control" type="number" name="estoque" value="<?=$produto['estoque']?>"></td>
+      </tr>
     <tr>
       <td >Descrição:</td>
       <td><textarea class="form-control" name="descricao" ><?=$produto ['descricao']?></textarea></td>

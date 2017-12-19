@@ -5,7 +5,7 @@ function usuarioestalogado(){
 }
 function verificaUsuario(){
 if (!usuarioestalogado() || $_SESSION["user"]!="admin") {
-  $_SESSION["danger"]= " Você nao tem acesso a esta funcionalidade";
+  $_SESSION["danger"]= " VocÃª nao tem acesso a esta funcionalidade";
   header("location: index.php");
   die();
   }

@@ -14,15 +14,15 @@ $categorias= listacategorias($conexao)
       <td ><input class="form-control" type="text" name="nome" ></td>
     </tr>
     <tr>
-      <td >Preço:</td>
+      <td >PreÃ§o:</td>
       <td><input class="form-control" type="number" name="preco"></td>
     </tr>
     <tr>
       <td >Estoque:</td>
-      <td><input class="form-control" type="number" name="preco"></td>
+      <td><input class="form-control" type="number" name="estoque"></td>
     </tr>
     <tr>
-      <td >Descrição:</td>
+      <td >DescriÃ§Ã£o:</td>
       <td><textarea class="form-control" name="descricao"></textarea></td>
     </tr>
     <tr>

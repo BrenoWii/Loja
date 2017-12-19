@@ -27,11 +27,11 @@ create table vendas
 (
 	id integer primary key auto_increment,
     prod_id int,
-    user_id int,
+    quantidade int,
     preco decimal(10,2),
     data date,
-    foreign key (prod_id) references produtos(id),
-    foreign key (user_id) references usuarios(id)
+    foreign key (prod_id) references produtos(id)
+    
 
 );
 
